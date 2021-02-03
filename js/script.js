@@ -1,4 +1,4 @@
- fetch("https://cat-fact.herokuapp.com/facts")
+fetch("https://cat-fact.herokuapp.com/facts")
 .then(response => response.json())
 .then(response => console.log(response))
 
