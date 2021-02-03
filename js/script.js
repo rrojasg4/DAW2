@@ -2,6 +2,16 @@ fetch("https://cat-fact.herokuapp.com/facts")
 .then(response => response.json())
 .then(response => console.log(response))
 
-fetch("https://cloud-herokuapp.com/https://purr.objects-us-east-1.dream.io/i/Eu8F6.jpg")
+let src
+
+fetch("https://aws.random.cat/meow")
 .then(response => response.json())
-.then(response => console.log(response))
+.then(response => {
+    src = response.file
+    let imagen = document.createElement("IMG")
+    imagen.setAttribute("src", src)
+    let container = document.getElementById("container")
+    container.append(imagen)
+})
+
+
