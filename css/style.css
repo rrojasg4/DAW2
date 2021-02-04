@@ -1,6 +1,6 @@
-  
-.container{
+ .container{
     background-color: lightskyblue;
+    height:100vh;
 }
 .nav{
     display:flex;
@@ -29,12 +29,27 @@
 
 
 }
+.factSpace{
+    
+}
 .factBox{
     display:flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.factBox img{
-    height:600px;
-    width:800px;
+.imagen{
+    max-height:450px;
+    max-width:50%;
+}
+.controlPanel{
+    position:absolute;
+    bottom:0;
+    display:flex;
+    height:100px;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.header__title{
+    margin: 0;
 }
