@@ -1,5 +1,7 @@
 let factSpace = document.getElementById("factSpace")
 
+let new_fact = document.getElementById("new_fact")
+
 const generateBox = (r, file)=>{
   let box = document.createElement("DIV")
   let text = document.createElement("p")
@@ -7,10 +9,9 @@ const generateBox = (r, file)=>{
   let image = document.createElement("IMG")
   image.setAttribute("src", file)
 
-
-  image.classList.add("imagen")
+  image.classList.add("factBox__image")
+  text.classList.add("factBox__text")
   box.classList.add("factBox")
-
 
   text.textContent= r
   box.append(image)  
@@ -31,12 +32,23 @@ const generateFact = ()=>{
       generateBox(res.data[0].fact, r.file)
     })
   })
-  
-
 }
 
-
+const deleteFacts = ()=>{
+  console.log("working")
+  factSpace.childNodes.forEach(child =>{
+    child.remove()
+  })
+}
+const newFact = ()=>{
+  deleteFacts()
+  generateFact()
+  deleteFacts()
+}
 generateFact()
+
+new_fact.addEventListener("click", newFact)
+
 /* 
 fetch("https://catfact.ninja/facts")
 .then(response => response.json())

@@ -1,30 +1,51 @@
  .container{
-    background-color: lightskyblue;
+    background-color: #80DED9;
     min-height:100vh;
     max-height:100%;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "header header"
+                         "nav nav"
+                         "factSpace factSpace"
+                         "controlPanel controlPanel"
+                         "footer footer";
 }
 
 .header{
-    background-color: darkslateblue;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.header__title{
-    font-size: 3em;
-    font-style: italic;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    height:5%;
-    color: white;
-    padding:2%;
-}
-.nav{
+    background-color: #068D9D;
     display:flex;
     justify-content: space-evenly;
     align-items: center;
-        margin: 1%;
+    grid-area: header;
+    width:50%;
+    padding: 0 25%;
+    
 }
+
+.header__title{
+    color: #AEECEF;
+    font-family: 'Hanalei', cursive;
+    font-size: 4em;
+}
+
+.header__img{
+    border:1px solid black;
+    width:30%;
+    margin: 4%;
+}
+
+.nav{
+
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+    grid-area:nav;
+
+}
+
 .nav ul {
+
     display:flex;
     justify-content: space-around;
     align-items: center;
@@ -37,36 +58,65 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 0px;
+
+}
+
+.nav li{
+    display:flex;
+    justify-content: space-around;
+    width:28%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.nav__button{
+    color:#53599A;
+   font-size:2em;
+    text-decoration: none;
+
 }
 
 .factSpace{
-    height:500px;
-}
-.factBox{
+    grid-area: factSpace;
+    max-height:500px;
+    width:100%;
     display:flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: center;
+    margin: 1%;
 }
-.imagen{
+
+.factBox{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "factBox__image factBox__text"
+
+}
+
+.factBox__text{
+    grid-area:factBox__text;
+    text-align: center;
+}
+
+.factBox__image{
+    grid-area:factBox__image;
     max-height:450px;
-    max-width:50%;
+    max-width:50%;   
+    margin:0 auto;
 }
 .controlPanel{
-    position:absolute;
-    bottom:0;
+    grid-area:controlPanel;
     display:flex;
-    height:100px;
+    height:50px;
     justify-content: center;
     align-items: center;
     width:100%;
+    margin: 0 auto;
+
 }
-.header__title{
-    margin: 0;
-}
 
+.controlPanel__button{
 
-
-.nav__button{
 	box-shadow: 0px 1px 0px 0px #f0f7fa;
 	background-color:#33bdef;
 	border-radius:6px;
@@ -80,11 +130,28 @@
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px -1px 0px #5b6178;
+
 }
-.nav__button:hover {
+
+.controlPanel__button:hover {
+
 	background-color:#019ad2;
+
 }
-.nav__button:active {
+
+.controlPanel__button:active {
+
 	position:relative;
 	top:1px;
+
+}
+.footer{
+    grid-area:footer;
+    width:100%;
+    background-color:#6D9DC5; 
+}
+
+.footer__img{
+    width:64px;
+    
 }
