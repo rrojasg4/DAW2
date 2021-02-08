@@ -30,7 +30,7 @@
 
 .header__img{
     border:1px solid black;
-    width:30%;
+    width:20%;
     margin: 4%;
 }
 
@@ -65,17 +65,23 @@
     display:flex;
     justify-content: space-around;
     width:28%;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
 }
 
 .nav__button{
-    color:#53599A;
+    padding:5% 20%;    
    font-size:2em;
     text-decoration: none;
-
+    color:#53599A;
+    font-family: 'Pangolin', cursive;
+    border-radius: 5%;
+    transition: padding 0.5s, background-color 0.5s, color 0.5s;
 }
 
+.nav__button:hover{
+    background-color: #53599A;
+    color:#80DED9;
+    padding:6% 21%;
+}
 .factSpace{
     grid-area: factSpace;
     max-height:500px;
@@ -89,25 +95,29 @@
 .factBox{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "factBox__image factBox__text"
-
+    grid-template-areas: "factBox__image factBox__text";
+    
 }
 
 .factBox__text{
     grid-area:factBox__text;
     text-align: center;
+    font-family: 'Pangolin', cursive;
+    color: #53599A;
+    font-size:2em;
+    text-align: justify;
+    vertical-align:center;
 }
 
 .factBox__image{
     grid-area:factBox__image;
-    max-height:450px;
+    max-height:350px;
     max-width:50%;   
     margin:0 auto;
 }
 .controlPanel{
     grid-area:controlPanel;
     display:flex;
-    height:50px;
     justify-content: center;
     align-items: center;
     width:100%;
@@ -127,31 +137,47 @@
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:1% 2%;
+    margin: 1%;
 	text-decoration:none;
+    font-family: 'Pangolin', cursive;
 	text-shadow:0px -1px 0px #5b6178;
 
 }
 
 .controlPanel__button:hover {
-
 	background-color:#019ad2;
-
 }
 
 .controlPanel__button:active {
-
 	position:relative;
 	top:1px;
-
 }
+
 .footer{
     grid-area:footer;
     width:100%;
     background-color:#6D9DC5; 
+    max-height:70%;
+    display:flex;
+    justify-content: space-between;    
+    align-items: center;
+    margin-top:auto;
 }
-
+.footer__images{
+    display:flex;
+    width:30%;
+    justify-content: space-around;
+    align-items: center;
+}
 .footer__img{
-    width:64px;
-    
+    width:32px;
+    margin:1%;
+}
+.footer__text{
+    float:right;
+    font-size: 1.2em;
+    color:#80DED9;
+    font-family: 'Pangolin', cursive;
+    margin: 1%;
 }
