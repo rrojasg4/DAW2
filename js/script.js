@@ -37,16 +37,16 @@ const generateFact = ()=>{  //get both img and text and generate the box
 
 const deleteFacts = ()=>{ //delete all children of a box, to swipe the first one and append the new one
   console.log("working")
-  factSpace.childNodes.forEach(child =>{
-    child.remove()
-  })
+  while(factSpace.firstChild){
+    factSpace.lastChild.remove()
+  }
 }
 const newFact = ()=>{ //generate a new box and delete the old ones
   deleteFacts()
   generateFact()
-  deleteFacts()
+
 }
 generateFact()
 
-new_fact.addEventListener("click", newFact)
+new_fact.addEventListener("click", newFact) 
 
